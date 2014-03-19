@@ -7,8 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "MenuView.h"
 
-@interface ViewController ()
+@interface ViewController () <MenuViewDelegate>
+
+@property (strong, nonatomic) MenuView *menuView;
+
+@property (weak, nonatomic) IBOutlet UILabel *label;
+
+@property (weak, nonatomic) IBOutlet UIView *overlayView;
 
 @end
 
@@ -17,13 +24,77 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    // メニュービュー
+    self.menuView = [[[NSBundle mainBundle] loadNibNamed:@"MenuView"
+                                                   owner:self
+                                                 options:nil] lastObject];
+    self.menuView.delegate = self;
+    [self.view addSubview:self.menuView];
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)tappedMenuButton:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (self.menuView.isMenuOpen) {
+        [self hiddenOverlayView];
+    } else {
+        [self showOverlayView];
+    }
+    
+    [self.menuView tappedMenuButton];
+}
+
+- (void)menuViewDidSelectedItem:(MenuView *)menuView type:(MenuViewSelectedItemType)type
+{
+    switch (type) {
+        case MenuViewSelectedItemTypeLeft:
+            self.label.text = @"selected LeftButton";
+            break;
+        
+        case MenuViewSelectedItemTypeCenter:
+            self.label.text = @"selected CenterButton";
+            break;
+        
+        case MenuViewSelectedItemTypeRight:
+        default:
+            self.label.text = @"selected RightButton";
+            break;
+    }
+    [self hiddenOverlayView];
+}
+
+- (void)showOverlayView
+{
+    self.overlayView.hidden = NO;
+    self.overlayView.alpha = 0.0;
+    
+    [UIView animateWithDuration:0.3f
+                          delay:0.05f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         self.overlayView.alpha = 0.5;
+                     }
+                     completion:^(BOOL finished){
+                     }];
+    
+    [UIView commitAnimations];
+}
+
+- (void)hiddenOverlayView
+{
+    self.overlayView.alpha = 0.5;
+    
+    [UIView animateWithDuration:0.3f
+                          delay:0.05f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         self.overlayView.alpha = 0.0;
+                     }
+                     completion:^(BOOL finished){
+                         self.overlayView.hidden = YES;
+                     }];
+    
+    [UIView commitAnimations];
 }
 
 @end

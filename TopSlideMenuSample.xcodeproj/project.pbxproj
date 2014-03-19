@@ -21,6 +21,8 @@
 		C93BF97A18D921F00047D6E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93BF95C18D921F00047D6E2 /* UIKit.framework */; };
 		C93BF98218D921F00047D6E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C93BF98018D921F00047D6E2 /* InfoPlist.strings */; };
 		C93BF98418D921F00047D6E2 /* TopSlideMenuSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C93BF98318D921F00047D6E2 /* TopSlideMenuSampleTests.m */; };
+		C93BF98F18D922F40047D6E2 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C93BF98E18D922F40047D6E2 /* MenuView.m */; };
+		C93BF99118D924DA0047D6E2 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93BF99018D924DA0047D6E2 /* MenuView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		C93BF97F18D921F00047D6E2 /* TopSlideMenuSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TopSlideMenuSampleTests-Info.plist"; sourceTree = "<group>"; };
 		C93BF98118D921F00047D6E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C93BF98318D921F00047D6E2 /* TopSlideMenuSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopSlideMenuSampleTests.m; sourceTree = "<group>"; };
+		C93BF98D18D922F40047D6E2 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		C93BF98E18D922F40047D6E2 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
+		C93BF99018D924DA0047D6E2 /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +122,9 @@
 				C93BF96A18D921F00047D6E2 /* Main.storyboard */,
 				C93BF96D18D921F00047D6E2 /* ViewController.h */,
 				C93BF96E18D921F00047D6E2 /* ViewController.m */,
+				C93BF98D18D922F40047D6E2 /* MenuView.h */,
+				C93BF98E18D922F40047D6E2 /* MenuView.m */,
+				C93BF99018D924DA0047D6E2 /* MenuView.xib */,
 				C93BF97018D921F00047D6E2 /* Images.xcassets */,
 				C93BF95F18D921F00047D6E2 /* Supporting Files */,
 			);
@@ -229,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C93BF97118D921F00047D6E2 /* Images.xcassets in Resources */,
+				C93BF99118D924DA0047D6E2 /* MenuView.xib in Resources */,
 				C93BF96318D921F00047D6E2 /* InfoPlist.strings in Resources */,
 				C93BF96C18D921F00047D6E2 /* Main.storyboard in Resources */,
 			);
@@ -250,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C93BF96F18D921F00047D6E2 /* ViewController.m in Sources */,
+				C93BF98F18D922F40047D6E2 /* MenuView.m in Sources */,
 				C93BF96918D921F00047D6E2 /* AppDelegate.m in Sources */,
 				C93BF96518D921F00047D6E2 /* main.m in Sources */,
 			);
@@ -381,6 +391,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TopSlideMenuSample/TopSlideMenuSample-Prefix.pch";
 				INFOPLIST_FILE = "TopSlideMenuSample/TopSlideMenuSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -394,6 +405,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TopSlideMenuSample/TopSlideMenuSample-Prefix.pch";
 				INFOPLIST_FILE = "TopSlideMenuSample/TopSlideMenuSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
